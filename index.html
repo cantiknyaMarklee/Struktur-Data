@@ -30,6 +30,7 @@ body{
     background:linear-gradient(180deg,#0d1b2a,#1b263b);
     padding-top:30px;
     z-index:1000;
+    overflow-y:auto;
 }
 
 .sidebar h2{
@@ -134,7 +135,7 @@ body{
 
 .card-materi p{
     color:#555;
-    line-height:1.7;
+    line-height:1.8;
 }
 
 .btn-materi{
@@ -152,41 +153,20 @@ body{
     background:#415a77;
 }
 
-/* ACCORDION */
+/* CODE */
 
-.accordion-item{
-    border:none;
-    margin-bottom:15px;
-    border-radius:15px !important;
-    overflow:hidden;
-    box-shadow:0 5px 15px rgba(0,0,0,0.06);
-}
-
-.accordion-button{
-    font-weight:bold;
-    padding:20px;
-}
-
-.accordion-button:not(.collapsed){
-    background:#1b263b;
+pre{
+    background:#0d1117;
     color:white;
-}
-
-/* TUGAS */
-
-.tugas{
-    background:white;
-    padding:40px;
-    border-radius:25px;
-    box-shadow:0 5px 18px rgba(0,0,0,0.08);
-}
-
-.tugas-item{
     padding:20px;
-    border-left:5px solid #1b263b;
-    margin-bottom:20px;
-    background:#f8fbff;
-    border-radius:12px;
+    border-radius:15px;
+    overflow:auto;
+    font-size:14px;
+    line-height:1.8;
+}
+
+code{
+    color:white;
 }
 
 /* FOOTER */
@@ -205,7 +185,6 @@ footer{
     width:100%;
     height:auto;
     position:relative;
-    padding-bottom:20px;
 }
 
 .content{
@@ -236,10 +215,9 @@ footer{
 
     <a href="#home"><i class="fa-solid fa-house"></i> Home</a>
     <a href="#materi"><i class="fa-solid fa-book"></i> Materi</a>
-    <a href="#modul"><i class="fa-solid fa-file-pdf"></i> Modul PDF</a>
-    <a href="#tugas"><i class="fa-solid fa-code"></i> Tugas</a>
+    <a href="#tugas"><i class="fa-solid fa-laptop-code"></i> Tugas</a>
     <a href="#kontak"><i class="fa-solid fa-envelope"></i> Kontak</a>
-
+    
 </div>
 
 <!-- CONTENT -->
@@ -253,9 +231,8 @@ footer{
         <h1>Website Pembelajaran Struktur Data</h1>
 
         <p>
-            Website ini berisi kumpulan materi Struktur Data,
-            modul praktikum, dan tugas pembelajaran interaktif.
-            Semua materi dapat langsung diakses dan dipelajari secara online.
+            Website ini berisi materi lengkap Struktur Data dan Algoritma
+            beserta contoh program Python yang dapat dipelajari secara online.
         </p>
 
     </section>
@@ -264,432 +241,492 @@ footer{
 
     <section id="materi">
 
-        <h2 class="mb-4 fw-bold">Materi Struktur Data</h2>
+        <h2 class="fw-bold mb-5">Materi Lengkap Struktur Data</h2>
 
-        <div class="row g-4">
+        <!-- STACK -->
 
-            <!-- STACK -->
+        <div class="card card-materi p-5 mb-4">
 
-            <div class="col-lg-4 col-md-6">
-                <div class="card card-materi p-4">
-
-                    <div class="materi-icon">
-                        <i class="fa-solid fa-layer-group"></i>
-                    </div>
-
-                    <h4>Stack</h4>
-
-                    <p>
-                        Struktur data dengan konsep LIFO
-                        (Last In First Out).
-                    </p>
-
-                    <a href="Materi/2_1-Stack.pdf" target="_blank" class="btn-materi">
-                        Buka Materi
-                    </a>
-
-                </div>
+            <div class="materi-icon">
+                <i class="fa-solid fa-layer-group"></i>
             </div>
 
-            <!-- QUEUE -->
+            <h3 class="fw-bold mb-3">Stack</h3>
 
-            <div class="col-lg-4 col-md-6">
-                <div class="card card-materi p-4">
+            <p>
+                Stack adalah struktur data linear yang menggunakan konsep
+                <b>LIFO (Last In First Out)</b>.
+                Data yang terakhir masuk akan menjadi data pertama yang keluar.
+            </p>
 
-                    <div class="materi-icon">
-                        <i class="fa-solid fa-arrows-turn-right"></i>
-                    </div>
+            <p>
+                Stack sering digunakan pada browser history,
+                undo-redo, dan call stack function.
+            </p>
 
-                    <h4>Queue</h4>
+            <h5 class="fw-bold mt-4">Contoh Program Stack</h5>
 
-                    <p>
-                        Struktur data dengan konsep FIFO
-                        (First In First Out).
-                    </p>
+<pre><code>stack = []
 
-                    <a href="Materi/2_2-Queues.pdf" target="_blank" class="btn-materi">
-                        Buka Materi
-                    </a>
+stack.append("Andi")
+stack.append("Budi")
+stack.append("Citra")
 
-                </div>
+print(stack)
+
+stack.pop()
+
+print(stack)</code></pre>
+
+        </div>
+
+        <!-- QUEUE -->
+
+        <div class="card card-materi p-5 mb-4">
+
+            <div class="materi-icon">
+                <i class="fa-solid fa-arrows-turn-right"></i>
             </div>
 
-            <!-- DEQUE -->
+            <h3 class="fw-bold mb-3">Queue</h3>
 
-            <div class="col-lg-4 col-md-6">
-                <div class="card card-materi p-4">
+            <p>
+                Queue menggunakan konsep
+                <b>FIFO (First In First Out)</b>.
+                Data pertama yang masuk akan menjadi data pertama yang keluar.
+            </p>
 
-                    <div class="materi-icon">
-                        <i class="fa-solid fa-right-left"></i>
-                    </div>
+            <p>
+                Queue digunakan pada sistem antrian printer,
+                tiket, dan request server.
+            </p>
 
-                    <h4>Deque</h4>
+            <h5 class="fw-bold mt-4">Contoh Program Queue</h5>
 
-                    <p>
-                        Struktur data antrian ganda yang memungkinkan
-                        insert dan delete dari dua sisi.
-                    </p>
+<pre><code>from collections import deque
 
-                    <a href="Materi/2_3-Deques.pdf" target="_blank" class="btn-materi">
-                        Buka Materi
-                    </a>
+queue = deque()
 
-                </div>
+queue.append("A")
+queue.append("B")
+queue.append("C")
+
+print(queue)
+
+queue.popleft()
+
+print(queue)</code></pre>
+
+        </div>
+
+        <!-- DEQUE -->
+
+        <div class="card card-materi p-5 mb-4">
+
+            <div class="materi-icon">
+                <i class="fa-solid fa-right-left"></i>
             </div>
 
-            <!-- BUBBLE SORT -->
+            <h3 class="fw-bold mb-3">Deque</h3>
 
-            <div class="col-lg-4 col-md-6">
-                <div class="card card-materi p-4">
+            <p>
+                Deque adalah Double Ended Queue yang memungkinkan
+                penambahan dan penghapusan data dari dua sisi.
+            </p>
 
-                    <div class="materi-icon">
-                        <i class="fa-solid fa-arrow-down-wide-short"></i>
-                    </div>
+            <h5 class="fw-bold mt-4">Contoh Program Deque</h5>
 
-                    <h4>Bubble Sort</h4>
+<pre><code>from collections import deque
 
-                    <p>
-                        Algoritma sorting sederhana dengan metode pertukaran data.
-                    </p>
+D = deque()
 
-                    <a href="Materi/3_1-BubbleSort.pdf" target="_blank" class="btn-materi">
-                        Buka Materi
-                    </a>
+D.append(10)
+D.appendleft(5)
 
-                </div>
+print(D)
+
+D.pop()
+
+print(D)</code></pre>
+
+        </div>
+
+        <!-- BUBBLE SORT -->
+
+        <div class="card card-materi p-5 mb-4">
+
+            <div class="materi-icon">
+                <i class="fa-solid fa-arrow-down-wide-short"></i>
             </div>
 
-            <!-- SELECTION SORT -->
+            <h3 class="fw-bold mb-3">Bubble Sort</h3>
 
-            <div class="col-lg-4 col-md-6">
-                <div class="card card-materi p-4">
+            <p>
+                Bubble Sort adalah algoritma pengurutan sederhana
+                dengan cara membandingkan dua data berdekatan
+                lalu menukarnya jika urutan salah.
+            </p>
 
-                    <div class="materi-icon">
-                        <i class="fa-solid fa-list-check"></i>
-                    </div>
+            <h5 class="fw-bold mt-4">Contoh Program Bubble Sort</h5>
 
-                    <h4>Selection Sort</h4>
+<pre><code>data = [5, 2, 8, 1]
 
-                    <p>
-                        Metode sorting dengan memilih nilai terkecil setiap iterasi.
-                    </p>
+for i in range(len(data)):
 
-                    <a href="Materi/3_2-selectionSort.pdf" target="_blank" class="btn-materi">
-                        Buka Materi
-                    </a>
+    for j in range(len(data)-1-i):
 
-                </div>
+        if data[j] > data[j+1]:
+            data[j], data[j+1] = data[j+1], data[j]
+
+print(data)</code></pre>
+
+        </div>
+
+        <!-- SELECTION SORT -->
+
+        <div class="card card-materi p-5 mb-4">
+
+            <div class="materi-icon">
+                <i class="fa-solid fa-list-check"></i>
             </div>
 
-            <!-- INSERTION SORT -->
+            <h3 class="fw-bold mb-3">Selection Sort</h3>
 
-            <div class="col-lg-4 col-md-6">
-                <div class="card card-materi p-4">
+            <p>
+                Selection Sort bekerja dengan memilih
+                nilai terkecil lalu menempatkannya
+                pada posisi yang benar.
+            </p>
 
-                    <div class="materi-icon">
-                        <i class="fa-solid fa-arrow-up-short-wide"></i>
-                    </div>
+            <h5 class="fw-bold mt-4">Contoh Program Selection Sort</h5>
 
-                    <h4>Insertion Sort</h4>
+<pre><code>data = [64, 25, 12, 22, 11]
 
-                    <p>
-                        Teknik sorting dengan menyisipkan data pada posisi yang benar.
-                    </p>
+for i in range(len(data)):
 
-                    <a href="Materi/3_3-InsertionSort.pdf" target="_blank" class="btn-materi">
-                        Buka Materi
-                    </a>
+    min_index = i
 
-                </div>
+    for j in range(i+1, len(data)):
+
+        if data[j] < data[min_index]:
+            min_index = j
+
+    data[i], data[min_index] = data[min_index], data[i]
+
+print(data)</code></pre>
+
+        </div>
+
+        <!-- INSERTION SORT -->
+
+        <div class="card card-materi p-5 mb-4">
+
+            <div class="materi-icon">
+                <i class="fa-solid fa-arrow-up-short-wide"></i>
             </div>
 
-            <!-- RECURSIVE -->
+            <h3 class="fw-bold mb-3">Insertion Sort</h3>
 
-            <div class="col-lg-4 col-md-6">
-                <div class="card card-materi p-4">
+            <p>
+                Insertion Sort menyisipkan data
+                ke posisi yang tepat pada bagian
+                data yang sudah terurut.
+            </p>
 
-                    <div class="materi-icon">
-                        <i class="fa-solid fa-repeat"></i>
-                    </div>
+            <h5 class="fw-bold mt-4">Contoh Program Insertion Sort</h5>
 
-                    <h4>Recursion</h4>
+<pre><code>data = [12, 11, 13, 5, 6]
 
-                    <p>
-                        Teknik pemrograman dengan memanggil fungsi itu sendiri.
-                    </p>
+for i in range(1, len(data)):
 
-                    <a href="Materi/4-Recursif.pdf" target="_blank" class="btn-materi">
-                        Buka Materi
-                    </a>
+    key = data[i]
+    j = i - 1
 
-                </div>
+    while j >= 0 and key < data[j]:
+        data[j + 1] = data[j]
+        j -= 1
+
+    data[j + 1] = key
+
+print(data)</code></pre>
+
+        </div>
+
+        <!-- RECURSION -->
+
+        <div class="card card-materi p-5 mb-4">
+
+            <div class="materi-icon">
+                <i class="fa-solid fa-repeat"></i>
             </div>
 
-            <!-- SEARCH -->
+            <h3 class="fw-bold mb-3">Recursion</h3>
 
-            <div class="col-lg-4 col-md-6">
-                <div class="card card-materi p-4">
+            <p>
+                Rekursif adalah teknik pemrograman
+                dimana fungsi memanggil dirinya sendiri.
+            </p>
 
-                    <div class="materi-icon">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </div>
+            <h5 class="fw-bold mt-4">Contoh Program Rekursif</h5>
 
-                    <h4>Sequential Search</h4>
+<pre><code>def faktorial(n):
 
-                    <p>
-                        Teknik pencarian data secara berurutan dari awal hingga akhir.
-                    </p>
+    if n == 1:
+        return 1
 
-                    <a href="Materi/5_1-SequentialSearch.pdf" target="_blank" class="btn-materi">
-                        Buka Materi
-                    </a>
+    return n * faktorial(n-1)
 
-                </div>
+print(faktorial(5))</code></pre>
+
+        </div>
+
+        <!-- SEQUENTIAL SEARCH -->
+
+        <div class="card card-materi p-5 mb-4">
+
+            <div class="materi-icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
             </div>
 
-            <!-- BINARY SEARCH -->
+            <h3 class="fw-bold mb-3">Sequential Search</h3>
 
-            <div class="col-lg-4 col-md-6">
-                <div class="card card-materi p-4">
+            <p>
+                Sequential Search adalah metode pencarian
+                data satu per satu dari awal hingga akhir.
+            </p>
 
-                    <div class="materi-icon">
-                        <i class="fa-solid fa-binoculars"></i>
-                    </div>
+            <h5 class="fw-bold mt-4">Contoh Program Sequential Search</h5>
 
-                    <h4>Binary Search</h4>
+<pre><code>data = [4, 7, 1, 9, 3]
 
-                    <p>
-                        Teknik pencarian cepat pada data yang sudah terurut.
-                    </p>
+key = 9
 
-                    <a href="Materi/5_2-BinarySearch.pdf" target="_blank" class="btn-materi">
-                        Buka Materi
-                    </a>
+for i in range(len(data)):
 
-                </div>
+    if data[i] == key:
+        print("Data ditemukan")
+        break</code></pre>
+
+        </div>
+
+        <!-- BINARY SEARCH -->
+
+        <div class="card card-materi p-5 mb-4">
+
+            <div class="materi-icon">
+                <i class="fa-solid fa-binoculars"></i>
             </div>
 
-            <!-- HASHING -->
+            <h3 class="fw-bold mb-3">Binary Search</h3>
 
-            <div class="col-lg-4 col-md-6">
-                <div class="card card-materi p-4">
+            <p>
+                Binary Search adalah teknik pencarian cepat
+                pada data yang sudah terurut.
+            </p>
 
-                    <div class="materi-icon">
-                        <i class="fa-solid fa-hashtag"></i>
-                    </div>
+            <h5 class="fw-bold mt-4">Contoh Program Binary Search</h5>
 
-                    <h4>Hashing</h4>
+<pre><code>data = [1, 3, 5, 7, 9, 11]
 
-                    <p>
-                        Teknik penyimpanan data menggunakan hash function.
-                    </p>
+key = 7
 
-                    <a href="Materi/5_3-Hashing.pdf" target="_blank" class="btn-materi">
-                        Buka Materi
-                    </a>
+low = 0
+high = len(data)-1
 
-                </div>
+while low <= high:
+
+    mid = (low + high) // 2
+
+    if data[mid] == key:
+        print("Data ditemukan")
+        break
+
+    elif data[mid] < key:
+        low = mid + 1
+
+    else:
+        high = mid - 1</code></pre>
+
+        </div>
+
+        <!-- HASHING -->
+
+        <div class="card card-materi p-5 mb-4">
+
+            <div class="materi-icon">
+                <i class="fa-solid fa-hashtag"></i>
             </div>
+
+            <h3 class="fw-bold mb-3">Hashing</h3>
+
+            <p>
+                Hashing adalah teknik penyimpanan
+                dan pencarian data menggunakan hash function.
+            </p>
+
+            <h5 class="fw-bold mt-4">Contoh Program Hashing</h5>
+
+<pre><code>hash_table = {}
+
+hash_table[101] = "Andi"
+hash_table[102] = "Budi"
+
+print(hash_table)
+
+if 101 in hash_table:
+    print("Data ditemukan")</code></pre>
 
         </div>
 
     </section>
-
-    <!-- MODUL -->
-
-    <section id="modul" class="mt-5">
-
-        <h2 class="mb-4 fw-bold">Daftar Modul PDF</h2>
-
-        <div class="accordion" id="accordionExample">
-
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-                        Modul Stack
-                    </button>
-                </h2>
-
-                <div id="collapseOne" class="accordion-collapse collapse show">
-                    <div class="accordion-body">
-                        Pelajari konsep stack, push, pop, dan implementasi stack.
-                        <br><br>
-                        <a href="Materi/2_1-Stack.pdf" target="_blank" class="btn btn-dark">
-                            Download PDF
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
-                        Modul Queue
-                    </button>
-                </h2>
-
-                <div id="collapseTwo" class="accordion-collapse collapse">
-                    <div class="accordion-body">
-                        Materi queue, circular queue, dan priority queue.
-                        <br><br>
-                        <a href="Materi/2_2-Queues.pdf" target="_blank" class="btn btn-dark">
-                            Download PDF
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
-                        Modul Sorting & Searching
-                    </button>
-                </h2>
-
-                <div id="collapseThree" class="accordion-collapse collapse">
-                    <div class="accordion-body">
-                        Materi Bubble Sort, Selection Sort,
-                        Binary Search, dan Sequential Search.
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- TUGAS -->
-
     <section id="tugas" class="mt-5">
 
-        <h2 class="mb-4 fw-bold">Tugas Praktikum</h2>
+        <h2 class="fw-bold mb-5">Tugas Jupyter Notebook</h2>
 
         <div class="row g-4">
 
-            <!-- HASHING -->
+        <!-- HASHING -->
 
-            <div class="col-lg-6">
+            <div class="col-md-6">
+
                 <div class="card card-materi p-4 h-100">
 
                     <div class="materi-icon">
                         <i class="fa-solid fa-hashtag"></i>
                     </div>
 
-                    <h4>Tugas Hashing</h4>
+                    <h4>File Hashing</h4>
 
                     <p>
-                        Implementasi teknik hashing,
-                        chaining, linear probing,
-                        dan quadratic probing.
+                        Notebook hashing menggunakan Python
+                        dan struktur data.
                     </p>
 
-                    <a href="Tugas/File_1_Hashing..ipynb" class="btn-materi">
-                        Buka Tugas
+                    <a href="https://colab.research.google.com/"
+                    target="_blank"
+                    class="btn-materi">
+
+                    Buka Notebook
+
                     </a>
 
                 </div>
+
             </div>
 
-            <!-- SORTING -->
+        <!-- SORTING -->
 
-            <div class="col-lg-6">
+            <div class="col-md-6">
+
                 <div class="card card-materi p-4 h-100">
 
                     <div class="materi-icon">
                         <i class="fa-solid fa-arrow-down-wide-short"></i>
                     </div>
 
-                    <h4>Tugas Sorting</h4>
+                    <h4>File Sorting</h4>
 
                     <p>
-                        Implementasi Bubble Sort,
-                        Selection Sort,
-                        dan Insertion Sort.
+                        Notebook algoritma sorting seperti
+                        Bubble Sort dan Selection Sort.
                     </p>
 
-                    <a href="Tugas/File_2_Sorting.ipynb" class="btn-materi">
-                        Buka Tugas
+                    <a href="https://colab.research.google.com/"
+                    target="_blank"
+                    class="btn-materi">
+
+                    Buka Notebook
+
                     </a>
 
                 </div>
+
             </div>
 
-            <!-- LINKED LIST -->
+        <!-- LINKED LIST -->
 
-            <div class="col-lg-6">
+            <div class="col-md-6">
+
                 <div class="card card-materi p-4 h-100">
 
                     <div class="materi-icon">
                         <i class="fa-solid fa-link"></i>
                     </div>
 
-                    <h4>Tugas Linked List</h4>
+                    <h4>Linked List</h4>
 
                     <p>
-                        Implementasi singly linked list,
-                        insert node, delete node,
-                        dan traversal linked list.
+                        Notebook pembelajaran Linked List
+                        menggunakan Python.
                     </p>
 
-                    <a href="Tugas/Linked_List (1).ipynb" class="btn-materi">
-                        Buka Tugas
+                    <a href="https://colab.research.google.com/"
+                    target="_blank"
+                    class="btn-materi">
+
+                    Buka Notebook
+
                     </a>
 
                 </div>
+
             </div>
 
-            <!-- STRUKDAT -->
+        <!-- TUGAS STRUKDAT -->
 
-            <div class="col-lg-6">
+            <div class="col-md-6">
+
                 <div class="card card-materi p-4 h-100">
 
                     <div class="materi-icon">
-                        <i class="fa-solid fa-code"></i>
+                        <i class="fa-solid fa-book"></i>
                     </div>
 
                     <h4>Tugas Struktur Data</h4>
 
                     <p>
-                        Kumpulan implementasi algoritma
-                        dan latihan struktur data.
+                        Notebook tugas lengkap Struktur Data
+                        dan Algoritma.
                     </p>
 
-                    <a href="Tugas/Tugas strukdat.ipynb" class="btn-materi">
-                        Buka Tugas
+                    <a href="https://colab.research.google.com/"
+                    target="_blank"
+                    class="btn-materi">
+
+                    Buka Notebook
+
                     </a>
 
                 </div>
+
             </div>
 
         </div>
 
     </section>
-
     <!-- KONTAK -->
 
-    <section id="kontak" class="mt-5">
+<section id="kontak" class="mt-5">
 
-        <div class="card border-0 shadow-sm p-5 rounded-4">
+    <div class="card border-0 shadow-sm p-5 rounded-4">
 
-            <h2 class="fw-bold mb-4">Kontak</h2>
+        <h2 class="fw-bold mb-4">Kontak</h2>
 
-            <p><i class="fa-solid fa-envelope"></i> strukturdata@gmail.com</p>
-            <p><i class="fa-brands fa-instagram"></i> @strukturdata</p>
-            <p><i class="fa-brands fa-github"></i> github.com/strukturdata</p>
+        <p><i class="fa-solid fa-envelope"></i> strukturdata@gmail.com</p>
+        <p><i class="fa-brands fa-instagram"></i> @strukturdata</p>
+        <p><i class="fa-brands fa-github"></i> github.com/strukturdata</p>
 
-        </div>
+    </div>
 
-    </section>
+</section>
 
     <!-- FOOTER -->
 
-    <footer>
-        <p>© 2026 Website Struktur Data | Dibuat Dengan HTML CSS Bootstrap</p>
-    </footer>
+<footer>
+    <p>© 2026 Website Struktur Data | Dibuat Dengan HTML CSS Bootstrap</p>
+</footer>
 
 </div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
